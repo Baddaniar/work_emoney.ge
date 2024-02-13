@@ -1,6 +1,8 @@
+import { getAllUsers } from "@/api/allusers"
 import DetailButton from "./detailbutton"
 
-export default function AllUsersTable() {
+export default async function AllUsersTable() {
+  const placeholder_users = await getAllUsers()
   const alluser = [
     {id: '333333',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '333333',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
