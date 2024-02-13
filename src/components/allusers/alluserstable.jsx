@@ -35,26 +35,26 @@ export default function AllUsersTable() {
           <table className=" min-w-full text-gray-900 md:table">
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
-                <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                  id
+                <th scope="col" className="px-4 text-purple-950 py-5 font-medium sm:pl-6">
+                  Id
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  name/username
+                <th scope="col" className="px-3 text-purple-950 py-5 font-medium">
+                  Name/Username
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  id number
+                <th scope="col" className="px-3 text-purple-950 py-5 font-medium">
+                  Id number
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  email
+                <th scope="col" className="px-3 text-purple-950 py-5 font-medium">
+                  Email
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  phone number
+                <th scope="col" className="px-3 text-purple-950 py-5 font-medium">
+                  Phone number
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  status
+                <th scope="col" className="px-3 text-purple-950 py-5 font-medium">
+                  Status
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  legal entity
+                <th scope="col" className="px-3 text-purple-950 py-5 font-medium">
+                  Legal entity
                 </th>
                 <th scope="col" className="relative py-3 pl-6 pr-3">
                   <span className="sr-only">detail</span>
