@@ -1,4 +1,4 @@
-import { getAllUsers } from "@/api/allusers"
+import { getAllUsers } from "@/app/api/allusers"
 import DetailButton from "./detailbutton"
 
 export default async function AllUsersTable() {

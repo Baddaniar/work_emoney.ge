@@ -1,4 +1,4 @@
-import { getUserDetails } from "@/api/user"
+import { getUserDetails } from "@/app/api/user"
 
 
 export default async function UserDetail({params}) {
