@@ -1,9 +1,28 @@
-import Link from "next/link";
+"use client"
+import { signIn} from 'next-auth/react'
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+  const router = useRouter();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const res = await signIn("credentials", {
+      email: formData.get('email'),
+      password: formData.get('password'),
+      redirect: false
+    });
+
+    if(res && ! res.error){
+      router.push('/allusers')
+    }else{
+      alert('incorrect emil or password')
+    }
+  }
   return (
     <div>
-      <form action={console.log("test")} className="space-y-2">
+      <form onSubmit={handleSubmit} className="space-y-2">
         <div className="flex-1 rounded-lg w-60 bg-gray-50 px-6 pb-4 pt-8">
           <h1 className={` mb-3 text-2xl`}>Please log in.</h1>
           <div className="w-full mb-5">
@@ -46,11 +65,12 @@ export default function LoginForm() {
             </div>
           </div>
           <div className="flex mb-5 justify-center">
-          <Link
-            className=" bg-[#460A72] hover:bg-[#7d3daa] px-5 py-2 text-sm leading-5 rounded-full font-semibold text-white" href={"/allusers"}
+          <button
+            className=" bg-[#460A72] hover:bg-[#7d3daa] px-5 py-2 text-sm leading-5 rounded-full font-semibold text-white"
+            type='submit'
           >
             Log in
-          </Link>
+          </button>
           </div>
 
         </div>

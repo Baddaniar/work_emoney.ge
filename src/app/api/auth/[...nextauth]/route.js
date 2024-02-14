@@ -1,11 +1,11 @@
 import Credentials from "next-auth/providers/credentials"
 import NextAuth from "next-auth/next";
 const users = [
-    {email: 'admin@gmail.com', password: 'admin', role: 'admin'},
-    {email: 'demo@gmail.com', password: 'demo', role: 'user'},
+    {email: 'admin@gmail.com', password: 'admin', name: 'admin'},
+    {email: 'demo@gmail.com', password: 'demo123', name: 'user'},
 ]
 
-const handler = NextAuth({
+export const authConfig = {
     providers: [
         Credentials({
             credentials: {
@@ -32,9 +32,10 @@ const handler = NextAuth({
                 const currentUser = users.find(user => user.email === credentials.email)
 
                 if (currentUser && currentUser.password === credentials.password) {
-                    const {password, ...userWithoutPsw} = currentUser;
 
-                    return userWithoutPsw
+                    const {password, ...user} = currentUser;
+
+                    return user
                 }
                 return null
             },
@@ -43,7 +44,9 @@ const handler = NextAuth({
             }
         })
     ]
-})
+}
+
+const handler = NextAuth(authConfig)
 
 
 export {handler as GET, handler as POST}

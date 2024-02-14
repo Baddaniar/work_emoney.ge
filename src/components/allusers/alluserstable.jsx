@@ -1,39 +1,39 @@
 import { getAllUsers } from "@/app/api/allusers"
 import DetailButton from "./detailbutton"
+import { getServerSession } from "next-auth"
+import { authConfig } from "@/app/api/auth/[...nextauth]/route"
+import DeleteButton from "./deletebutton"
 
 export default async function AllUsersTable() {
+  const session = await getServerSession(authConfig)
   const placeholder_users = await getAllUsers()
   const alluser = [
     {id: '1',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '1',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '2',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '3',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '4',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '5',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '7',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '6',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '7',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '8',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '5',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '5',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '4',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '2',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '6',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '3',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '2',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '7',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '8',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '9',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
     {id: '10',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '2',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '6',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
-    {id: '9',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '11',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '12',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '13',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '14',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '15',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '16',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '17',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '18',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '19',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
+    {id: '20',name_username: 'dan dan', id_number: '33123123', email: 'dasde@asdasd.com', phone_number: '+42234234', status: 'open', legal_entity: 'asdasd' },
   ]
 
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
+        <div className="rounded-lg bg-gray-100 p-2 md:pt-0">
           <table className=" min-w-full text-gray-900 md:table">
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
@@ -58,8 +58,7 @@ export default async function AllUsersTable() {
                 <th scope="col" className="px-3 text-purple-950 py-5 font-medium">
                   Legal entity
                 </th>
-                <th scope="col" className="relative py-3 pl-6 pr-3">
-                  <span className="sr-only">detail</span>
+                <th scope="col" className="relative py-3 pl-3 pr-1">
                 </th>
               </tr>
             </thead>
@@ -92,6 +91,9 @@ export default async function AllUsersTable() {
                   </td>
                   <td className="whitespace-nowrap px-1 py-3">
                     <DetailButton id={user.id}/>
+                    {session?.user.name === 'admin' && (
+                      <DeleteButton id={user.id} />
+                    )}
                   </td>
                 </tr>
               ))}
