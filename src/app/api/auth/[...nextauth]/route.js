@@ -1,7 +1,7 @@
 import Credentials from "next-auth/providers/credentials"
 import NextAuth from "next-auth/next";
 const users = [
-    {email: 'admin@gmail.com', password: 'admin', name: 'admin'},
+    {email: 'admin@gmail.com', password: 'admin123', name: 'admin'},
     {email: 'demo@gmail.com', password: 'demo123', name: 'user'},
 ]
 

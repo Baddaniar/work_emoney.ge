@@ -16,7 +16,7 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Log in
 data to login
-    {email: 'admin@gmail.com', password: 'admin', name: 'admin'},
+    {email: 'admin@gmail.com', password: 'admin123', name: 'admin'},
     {email: 'demo@gmail.com', password: 'demo123', name: 'user'},
 
 
